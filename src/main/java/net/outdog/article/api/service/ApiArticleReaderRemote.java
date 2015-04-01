@@ -7,6 +7,7 @@ import net.outdog.article.api.bean.ApiQuery;
 import java.util.List;
 
 public interface ApiArticleReaderRemote {
-    long count(ApiArticle article);
-    List<ApiArticle> query(ApiQuery<ApiArticle> query);
+    long count(String appId, ApiArticle article);
+
+    List<ApiArticle> query(String appId, ApiQuery<ApiArticle> query);
 }

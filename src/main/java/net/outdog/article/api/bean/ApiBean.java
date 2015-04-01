@@ -1,4 +1,5 @@
 package net.outdog.article.api.bean;
+
 public abstract class ApiBean {
     private long id;
     private int version;
