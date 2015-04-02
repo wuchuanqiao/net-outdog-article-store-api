@@ -1,6 +1,9 @@
 package net.outdog.article.api.bean;
 
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class ApiQuery<T extends ApiBean> {
     private int page;
     private int size;
@@ -28,5 +31,9 @@ public class ApiQuery<T extends ApiBean> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    @Override public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 }

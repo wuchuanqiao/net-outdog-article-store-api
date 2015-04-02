@@ -1,5 +1,8 @@
 package net.outdog.article.api.bean;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.util.List;
 
 public class ApiArticle extends ApiBean {
@@ -65,5 +68,10 @@ public class ApiArticle extends ApiBean {
 
     public void setComments(List<ApiArticle> comments) {
         this.comments = comments;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 }

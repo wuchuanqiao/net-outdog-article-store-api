@@ -3,11 +3,13 @@ package net.outdog.article.api.service;
 
 import net.outdog.article.api.bean.ApiArticle;
 import net.outdog.article.api.bean.ApiQuery;
-
-import java.util.List;
+import net.outdog.article.api.bean.ApiResult;
+import net.outdog.article.api.exception.ApiException;
 
 public interface ApiArticleReaderRemote {
-    long count(String appId, ApiArticle article);
+    long count(String appId, ApiArticle article) throws ApiException;
 
-    List<ApiArticle> query(String appId, ApiQuery<ApiArticle> query);
+    ApiArticle query(String appId, long id, int version) throws ApiException;
+
+    ApiResult<ApiArticle> query(String appId, ApiQuery<ApiArticle> query) throws ApiException;
 }
